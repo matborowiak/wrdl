@@ -11,6 +11,7 @@ export const InputForm = ({ setGuess }) => {
     if (guess.length === 5) {
       setGuess(guess)
       setShowErrorLabel(false)
+      setGuessInputValue('')
     } else {
       setShowErrorLabel(true)
       console.log('input must be 5 characters long')
