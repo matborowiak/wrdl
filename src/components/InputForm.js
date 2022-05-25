@@ -24,37 +24,33 @@ export const InputForm = ({ setGuess }) => {
 
   return (
     <form style={styles.form} onSubmit={inputSubmitHandler}>
-      <div style={styles.input}>
-        {showErrorLabel && (
-          <label style={styles.label} to="guess">
-            input must be 5 characters long
-          </label>
-        )}
+      <div>
         <input
           value={guessInputValue}
           onChange={onChangeHandler}
           name="guess"
         />
+        <input type="submit" />
+        <RestartButton />
       </div>
-      <input type="submit" />
-      <RestartButton />
+
+      {showErrorLabel && (
+        <label style={styles.label} to="guess">
+          {'Input must be 5 characters long !'}
+        </label>
+      )}
     </form>
   )
 }
 
 const styles = {
   form: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    maxWidth: '300px',
-    margin: 'auto',
-  },
-  input: {
     position: 'relative',
     display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    maxWidth: '300px',
+    margin: 'auto',
   },
   label: {
     color: 'red',
