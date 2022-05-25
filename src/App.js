@@ -13,17 +13,13 @@ const getRandomInt = (max) => {
   return Math.floor(Math.random() * max)
 }
 
+const randomGuessWord = dictionary[getRandomInt(dictionary.length)]
+
 function App() {
-  const [wordToGuess, setWordToGuess] = useState('dogie')
+  const [wordToGuess, setWordToGuess] = useState(randomGuessWord)
   const [guess, setGuess] = useState('')
   const [charactersToRender, setCharactersToRender] = useState([])
   const storedGuesses = useGuessHistory(charactersToRender)
-
-  // get random word from dictionary
-  useEffect(() => {
-    const randomGuessWord = dictionary[getRandomInt(dictionary.length)]
-    setWordToGuess(randomGuessWord)
-  }, [])
 
   // resolve
   useEffect(() => {
