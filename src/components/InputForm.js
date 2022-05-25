@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { RestartButton } from './RestartButton'
 
 export const InputForm = ({ setGuess }) => {
   const [guessInputValue, setGuessInputValue] = useState('')
@@ -14,7 +15,6 @@ export const InputForm = ({ setGuess }) => {
       setGuessInputValue('')
     } else {
       setShowErrorLabel(true)
-      console.log('input must be 5 characters long')
     }
   }
 
@@ -37,6 +37,7 @@ export const InputForm = ({ setGuess }) => {
         />
       </div>
       <input type="submit" />
+      <RestartButton />
     </form>
   )
 }
@@ -45,7 +46,8 @@ const style = {
   form: {
     display: 'flex',
     flexDirection: 'row',
-    maxWidth: '200px',
+    justifyContent: 'space-between',
+    maxWidth: '300px',
     margin: 'auto',
   },
   input: {
@@ -53,7 +55,6 @@ const style = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    maxWidth: '200px',
   },
   label: {
     color: 'red',
