@@ -3,6 +3,7 @@ import { InputForm } from './components/InputForm'
 import { ResultHistory } from './components/ResultHistory'
 import { Result } from './components/Result'
 import { getRandomGuessWord } from './utils/getRandomGuessWord'
+import { resolveWin } from './utils/resolveWin'
 
 import { useGuessHistory } from './hooks/useGuessHistory'
 import { resolveGuess } from './utils/resolveGuess'
@@ -13,11 +14,13 @@ const randomGuessWord = getRandomGuessWord()
 const ResultsBoard = ({ guess }) => {
   const resolvedGuess = resolveGuess(guess, randomGuessWord)
   const storedGuesses = useGuessHistory(resolvedGuess)
+  const hasGuessed = resolveWin(resolvedGuess)
 
   return (
     <div>
       <ResultHistory storedGuesses={storedGuesses} />
       <Result charactersToRender={resolvedGuess} />
+      {hasGuessed && <p>YOU WON! KRAKEN RELEASED 🐙</p>}
     </div>
   )
 }
