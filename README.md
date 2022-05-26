@@ -16,6 +16,7 @@ Tech:
 - refine naming of components and variables
 - introduce proper styling instead of in-line (perf)
 - move out handlers declarations out of component bodies (perf)
+- improve DOM semantics + accessibility (currently eg. headers used for fast looks only)
 
 Feat:
 - add chance counter
