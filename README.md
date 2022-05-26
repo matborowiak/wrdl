@@ -8,7 +8,7 @@ To the moon! 🚀👨‍🚀
 2. Run `yarn` / `npm` to install dependencies
 3. Run `yarn start` / `npm run start`
 
-### To do:
+## To do:
 
 Tech:
 - implement TS for type safety and improve modules apis
